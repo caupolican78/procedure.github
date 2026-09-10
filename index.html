@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servicio Militar por Contrato en Rusia para Ciudadanos Extranjeros</title>
+  <style>
+    :root {
+      --primary: #c8102e;
+      --primary-dark: #8b0000;
+      --secondary: #1a2a3a;
+      --bg-dark: #0f172a;
+      --bg-card: #1e293b;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #eab308;
+      --border: #334155;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 80px 0 60px;
+      text-align: center;
+      background: linear-gradient(180deg, #1e1b4b 0%, var(--bg-dark) 100%);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 16px;
+      background: rgba(200, 16, 46, 0.2);
+      border: 1px solid var(--primary);
+      color: #f87171;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      max-width: 800px;
+      margin: 0 auto 40px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .stat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 24px;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .stat-card .value {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .stat-card .label {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* General Sections */
+    section {
+      padding: 60px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-title h2 {
+      font-size: 2.2rem;
+      margin-bottom: 12px;
+    }
+
+    .section-title p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
+
+    /* Grid Cards */
+    .grid-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+    }
+
+    .card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+      color: #fff;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* Tables */
+    .table-container {
+      overflow-x: auto;
+      background: var(--bg-card);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    th, td {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      background: #111827;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    /* Timeline Steps */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .step-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      position: relative;
+    }
+
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      background: var(--primary);
+      border-radius: 50%;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    /* FAQ */
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+    }
+
+    .faq-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px;
+    }
+
+    .faq-item h3 {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+      color: #38bdf8;
+    }
+
+    /* Form Section */
+    .form-wrapper {
+      max-width: 600px;
+      margin: 0 auto;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 32px;
+      border-radius: 16px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      background: #0f172a;
+      border: 1px solid var(--border);
+      color: #fff;
+      font-size: 1rem;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn:hover {
+      background: var(--primary-dark);
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 0;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="container">
+      <span class="badge">Programa Gubernamental Oficial</span>
+      <h1>Servicio Militar por Contrato en Rusia para Ciudadanos Extranjeros</h1>
+      <p>Camino legal hacia la ciudadanía rusa, ingresos estables y garantías sociales completas para usted y su familia.</p>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="value">2,300,000+ ₽</div>
+          <div class="label">Pago Único Inicial</div>
+        </div>
+        <div class="stat-card">
+          <div class="value">204,000+ ₽</div>
+          <div class="label">Salario Mensual Base</div>
+        </div>
+        <div class="stat-card">
+          <div class="value">15 Días</div>
+          <div class="label">Tiempo hacia la Ciudadanía</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Beneficios -->
+  <section>
+    <div class="container">
+      <div class="section-title">
+        <h2>Beneficios para Ciudadanos Extranjeros</h2>
+        <p>Condiciones y garantías oficiales al firmar el contrato de servicio</p>
+      </div>
+      <div class="grid-cards">
+        <div class="card">
+          <h3>Ciudadanía Rusa</h3>
+          <p>Obtenga el pasaporte ruso mediante un procedimiento simplificado dentro de 2 semanas posteriores a la firma del contrato.</p>
+        </div>
+        <div class="card">
+          <h3>Pago Único</h3>
+          <p>De 2,300,000 a 5,000,000 de rublos inmediatamente tras la firma e inicio de servicio.</p>
+        </div>
+        <div class="card">
+          <h3>Formación y Equipamiento</h3>
+          <p>Formación militar profesional gratuita y dotación completa de uniformes y equipo técnico.</p>
+        </div>
+        <div class="card">
+          <h3>Apoyo Familiar</h3>
+          <p>Cobertura médica, educación y garantías sociales completas para los miembros de su núcleo familiar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Potencial de Ingresos -->
+  <section>
+    <div class="container">
+      <div class="section-title">
+        <h2>Potencial de Ingresos y Compensaciones</h2>
+        <p>Estructura financiera y tabla de compensaciones en rublos (₽)</p>
+      </div>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Concepto</th>
+              <th>Importe Estimado (Rublos)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Pago Único al firmar</td>
+              <td><strong>2,300,000 – 5,000,000 ₽</strong></td>
+            </tr>
+            <tr>
+              <td>Salario Mensual (Rango Soldado)</td>
+              <td>204,000 ₽ / mes</td>
+            </tr>
+            <tr>
+              <td>Salario Mensual (Rango Sargento)</td>
+              <td>232,000 ₽ / mes</td>
+            </tr>
+            <tr>
+              <td>Participación en Combate (diario)</td>
+              <td>8,000 ₽ / día</td>
+            </tr>
+            <tr>
+              <td>Bonos por Misiones Cumplidas</td>
+              <td>50,000 – 500,000 ₽</td>
+            </tr>
+            <tr>
+              <td>Compensación por Lesiones</td>
+              <td>3,000,000 ₽</td>
+            </tr>
+            <tr>
+              <td>Seguro de Vida Estatal</td>
+              <td>Hasta 12,000,000 ₽</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Camino hacia la Ciudadanía -->
+  <section>
+    <div class="container">
+      <div class="section-title">
+        <h2>Camino hacia el Contrato y Ciudadanía</h2>
+        <p>Proceso estructurado desde la solicitud hasta la firma oficial</p>
+      </div>
+      <div class="steps">
+        <div class="step-item">
+          <div class="step-number">1</div>
+          <h3>Día 1-2: Solicitud</h3>
+          <p>Envío de datos mediante formulario y asesoramiento telefónico inicial en su idioma.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-number">2</div>
+          <h3>Día 3-7: Llegada</h3>
+          <p>Organización de boletos, traslado desde el aeropuerto y alojamiento cubierto.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-number">3</div>
+          <h3>Día 8-14: Exámenes</h3>
+          <p>Chequeo médico integral, emisión de documentos fiscales (INN/SNILS) y cuenta bancaria.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-number">4</div>
+          <h3>Día 15-21: Firma</h3>
+          <p>Firma formal del contrato militar, apertura del expediente de ciudadanía y abono inicial.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Requisitos -->
+  <section>
+    <div class="container">
+      <div class="section-title">
+        <h2>Requisitos para Candidatos</h2>
+        <p>Condiciones mínimas para aplicar al servicio por contrato</p>
+      </div>
+      <div class="grid-cards">
+        <div class="card">
+          <h3>Edad</h3>
+          <p>Entre 18 y 60 años al momento de presentar la solicitud.</p>
+        </div>
+        <div class="card">
+          <h3>Salud Física y Mental</h3>
+          <p>Aptitud física sin enfermedades crónicas graves ni registros de psiquiatría o toxicomanía.</p>
+        </div>
+        <div class="card">
+          <h3>Estatus Legal</h3>
+          <p>Pasaporte vigente y tarjeta de migración / entrada regular al país.</p>
+        </div>
+        <div class="card">
+          <h3>Antecedentes</h3>
+          <p>Sin condenas penales por delitos de gravedad o sentencias vigentes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Preguntas Frecuentes -->
+  <section>
+    <div class="container">
+      <div class="section-title">
+        <h2>Preguntas Frecuentes</h2>
+        <p>Respuestas a las consultas habituales sobre el procedimiento</p>
+      </div>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h3>¿Se requiere experiencia militar previa?</h3>
+          <p>No. Se proporciona instrucción militar integral de 1 a 2 meses en centros de entrenamiento especializados.</p>
+        </div>
+        <div class="faq-item">
+          <h3>¿Cuál es la duración mínima del contrato?</h3>
+          <p>La duración mínima de contratación es de 1 año, con opción a renovación por períodos mayores.</p>
+        </div>
+        <div class="faq-item">
+          <h3>¿Cuándo se transfiere el pago inicial?</h3>
+          <p>El abono se realiza en la cuenta bancaria de la tarjeta MIR asignada en un plazo de hasta 21 días tras la firma.</p>
+        </div>
+        <div class="faq-item">
+          <h3>¿Puede la familia obtener beneficios?</h3>
+          <p>Sí, la familia directa accede a la solicitud de ciudadanía por vía rápida y a los servicios sanitarios y educativos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Formulario de Solicitud -->
+  <section>
+    <div class="container">
+      <div class="section-title">
+        <h2>Formulario de Contacto</h2>
+        <p>Envíe sus datos para recibir asesoría personalizada</p>
+      </div>
+      <div class="form-wrapper">
+        <form action="#" method="POST">
+          <div class="form-group">
+            <label for="fullname">Nombre y Apellidos</label>
+            <input type="text" id="fullname" name="fullname" placeholder="Ej. Juan Pérez" required>
+          </div>
+          <div class="form-group">
+            <label for="country">País de Ciudadanía</label>
+            <input type="text" id="country" name="country" placeholder="Ej. México, Colombia..." required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Teléfono / WhatsApp</label>
+            <input type="tel" id="phone" name="phone" placeholder="+123456789" required>
+          </div>
+          <div class="form-group">
+            <label for="age">Edad</label>
+            <input type="number" id="age" name="age" min="18" max="60" placeholder="18-60" required>
+          </div>
+          <button type="submit" class="btn">Enviar Solicitud</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Servicio por Contrato. Información oficial sobre requisitos y procedimiento administrativo.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
